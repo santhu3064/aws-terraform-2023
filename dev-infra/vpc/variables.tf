@@ -93,3 +93,14 @@ variable "private_route_tags" {
     type = map
     description = "route tags"
 }
+
+
+variable "public_subnet_common_tag" {
+    type = map
+    description = "public subnet common tags"
+}
+
+variable "private_subnet_common_tag" {
+    type = map
+    description = "public subnet common tags"
+}

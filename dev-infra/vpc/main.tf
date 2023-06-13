@@ -18,7 +18,7 @@ resource "aws_subnet" "public_subnet_one" {
   availability_zone       = var.public_subnet_one_az
   map_public_ip_on_launch = var.public_subnet_one_map_public_ip_on_launch
 
-  tags = var.public_subnet_one_tags
+  tags = "${merge(var.public_subnet_common_tag, var.public_subnet_one_tags)}" 
 }
 
 resource "aws_subnet" "public_subnet_two" {
@@ -27,15 +27,14 @@ resource "aws_subnet" "public_subnet_two" {
   availability_zone       = var.public_subnet_two_az
   map_public_ip_on_launch = var.public_subnet_two_map_public_ip_on_launch
 
-  tags = var.public_subnet_two_tags
+  tags = "${merge(var.public_subnet_common_tag, var.public_subnet_two_tags)}" 
 }
 
 resource "aws_subnet" "private_subnet_one" {
   vpc_id            = aws_vpc.main.id
   cidr_block        = var.private_subnet_one
   availability_zone = var.private_subnet_one_az
-
-  tags = var.private_subnet_one_tags
+  tags = "${merge(var.private_subnet_common_tag, var.private_subnet_one_tags)}" 
 }
 
 resource "aws_subnet" "private_subnet_two" {
@@ -43,7 +42,7 @@ resource "aws_subnet" "private_subnet_two" {
   cidr_block        = var.private_subnet_two
   availability_zone = var.private_subnet_two_az
 
-  tags = var.private_subnet_two_tags
+  tags = "${merge(var.private_subnet_common_tag, var.private_subnet_two_tags)}" 
 }
 
 resource "aws_internet_gateway" "dev_igw" {
