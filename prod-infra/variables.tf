@@ -54,4 +54,18 @@ variable "map_public_ip_on_launch_privsubnet" {
 }
 
 
+variable "igw_tags" {
+    type = map
+}
+
+
+variable "public_route_tags" {
+    type = map
+}
+
+
+variable "private_route_tags" {
+    type = map
+}
+
 
