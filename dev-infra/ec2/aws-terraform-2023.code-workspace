@@ -2,6 +2,9 @@
 	"folders": [
 		{
 			"path": "../.."
+		},
+		{
+			"path": "../../../devopsclasses/devops-session-notes"
 		}
 	]
 }

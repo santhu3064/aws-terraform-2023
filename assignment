@@ -1,0 +1,4 @@
+1. Create one insatcne in publicn subnet and one in private subnet .Aloow ssh http from everywhere. Install nbginx webserver on public instance.
+  Use terrafor modules and create the resources
+
+2. Create two instance in public ir private subnet to add additoional ebs volume for one insatnce and only root volume for another instance(Hint: use dynamic funmction inside module definition)

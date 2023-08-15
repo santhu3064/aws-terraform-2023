@@ -5,11 +5,8 @@ locals {
   }
 }
 
-resource "aws_vpc" "main" {
 
-  cidr_block = local.cidr_block
-  tags       = local.tags
-}
+
 
 
 resource "aws_subnet" "public_subnet_one" {
@@ -20,6 +17,14 @@ resource "aws_subnet" "public_subnet_one" {
 
   tags = "${merge(var.public_subnet_common_tag, var.public_subnet_one_tags)}" 
 }
+
+
+resource "aws_vpc" "main" {
+
+  cidr_block = local.cidr_block
+  tags       = local.tags
+}
+
 
 resource "aws_subnet" "public_subnet_two" {
   vpc_id                  = aws_vpc.main.id
